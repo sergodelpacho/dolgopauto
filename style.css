@@ -141,3 +141,34 @@ text-align:center;
 .grid3{ grid-template-columns: 1fr; }
 .hero{ min-height: auto; padding-top: 30px; }
 }
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ ===== */
+
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero_card {
+    max-width: 100%;
+  }
+
+  .buttons .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+}
