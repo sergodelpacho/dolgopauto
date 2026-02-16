@@ -1,56 +1,88 @@
-<!doctype html>
-<html lang="ru">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>DolgopAuto — автозапчасти</title>
+<section>
+    <h2 class="sectionTitle">Категории</h2>
+    <div class="grid grid4">
+      <div class="card tile"><h3>ТО и расходники</h3><p>Фильтры, свечи, колодки и другое для обслуживания.</p></div>
+      <div class="card tile"><h3>Масла и жидкости</h3><p>Моторные, трансмиссионные, антифризы, тормозные жидкости.</p></div>
+      <div class="card tile"><h3>Подвеска и тормоза</h3><p>Амортизаторы, рычаги, диски, колодки, суппорта.</p></div>
+      <div class="card tile"><h3>Аксессуары</h3><p>Сопутствующие товары и полезные мелочи.</p></div>
+    </div>
+  </section>
 
-<style>
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  color:white;
+  <section id="how">
+    <h2 class="sectionTitle">Как заказать</h2>
+    <div class="two">
+      <div class="card tile">
+        <h3>1) Напишите VIN / параметры</h3>
+        <p>Укажите VIN или марку/модель/год/двигатель и что нужно.</p>
+        <div class="divider"></div>
+        <h3>2) Получите варианты</h3>
+        <p>Подберём оригинал и аналоги, согласуем цену и сроки.</p>
+        <div class="divider"></div>
+        <h3>3) Оформим заказ</h3>
+        <p>Подскажем по оплате/получению. Дальше всё по ситуации.</p>
+      </div>
 
-  background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
-    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
-    center/cover no-repeat fixed;
-}
+      <div class="card form">
+        <h3 style="margin:0 0 10px;">Оставить заявку</h3>
+        <form id="leadForm">
+          <div class="field">
+            <label for="name">Имя</label>
+            <input id="name" placeholder="Как к вам обращаться" required>
+          </div>
+          <div class="field">
+            <label for="contact">Контакт (телефон или Telegram)</label>
+            <input id="contact" placeholder="+7… или @username" required>
+          </div>
+          <div class="field">
+            <label for="topic">Тема</label>
+            <input id="topic" placeholder="Подбор по VIN / ТО / масла…" required>
+          </div>
+          <div class="field">
+            <label for="msg">Сообщение (VIN / авто / детали)</label>
+            <textarea id="msg" placeholder="Например: VIN…, модель, год, что нужно" required></textarea>
+          </div>
+          <button class="btn primary" type="submit">Отправить в Telegram и на почту</button>
+          <p class="note" style="margin:10px 0 0;">На GitHub Pages форма отправляется через открытие Telegram и почтового клиента.</p>
+        </form>
+      </div>
+    </div>
+  </section>
 
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:20px;
-}
+  <footer>
+    <div class="small">© DolgopAuto • Автозапчасти • Ежедневно 09:00–20:00 • Тел: 8 (977) 936-29-53</div>
+  </footer>
+</main>
 
-.card{
-  background:rgba(0,0,0,.65);
-  border-radius:18px;
-  padding:25px;
-  margin-bottom:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
-}
+<script>
+  // Отправка: Telegram share + mailto (работает на GitHub Pages без сервера)
+  const form = document.getElementById('leadForm');
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-h1{font-size:34px;margin:0 0 10px}
-p{font-size:18px}
+    const name = document.getElementById('name').value.trim();
+    const contact = document.getElementById('contact').value.trim();
+    const topic = document.getElementById('topic').value.trim();
+    const msg = document.getElementById('msg').value.trim();
 
-.btn{
-  display:inline-block;
-  padding:14px 18px;
-  margin:8px 6px 0 0;
-  border-radius:12px;
-  background:#22c55e;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
-  font-size:16px;
-}
-.btn:hover{background:#16a34a}
-</style>
-</head>
+    const text =
+Заявка с сайта DolgopAuto
+Имя: ${name}
+Контакт: ${contact}
+Тема: ${topic}
+Сообщение: ${msg};
 
-<body>
+    const tgShare = https://t.me/share/url?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(text)};
+    window.open(tgShare, '_blank', 'noopener');
 
+    const subject = Заявка с сайта: ${topic};
+    const mailto = mailto:dolgopauto@mail.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)};
+    setTimeout(() => { window.location.href = mailto; }, 350);
+
+    form.reset();
+  });
+</script>
+</body>
+</html>
 <div class="container">
 
 <div class="card">
