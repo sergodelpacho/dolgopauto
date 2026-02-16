@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DolgopAuto — автозапчасти</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DolgopAuto — автозапчасти</title>
 
-<link rel="stylesheet" href="./style.css">
-
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -14,38 +13,67 @@
 <header>
   <div class="container">
     <div class="topbar">
-      <div class="brand">
-        <div class="logo"></div>
+      <a class="brand" href="index.html">
+        <span class="logo" aria-hidden="true"></span>
         <div>
-          <b>DolgopAuto</b><br>
+          <b>Dolgop<span style="color:var(--accent)">Auto</span></b><br />
           <span class="small">Подбор автозапчастей по VIN</span>
         </div>
-      </div>
+      </a>
+
+      <nav>
+        <a class="navlink" href="catalog.html">Каталог</a>
+        <a class="navlink" href="contacts.html">Контакты</a>
+      </nav>
     </div>
   </div>
 </header>
 
 <main class="container">
 
-<div class="hero">
-  <div class="card heroMain">
-    <h1>Автозапчасти под заказ и в наличии</h1>
-    <p class="lead">Подбор по VIN. Оригинал и аналоги. Быстро и надёжно.</p>
+  <div class="hero">
+    <div class="card heroMain">
+      <h1>Автозапчасти под заказ и в наличии</h1>
+      <p class="lead">Подбор по VIN. Оригинал и аналоги. Быстро и надёжно.</p>
 
-    <div class="btnRow">
-      <a class="btn primary" href="tel:+79779362953">📞 Позвонить</a>
-      <a class="btn" href="https://t.me/avantekru">Telegram</a>
-      <a class="btn" href="https://max.ru/u/f9LHodD0cOKj3dtP8OrowftL4OglmMfxSO4WeATngrdyDcu9j8BsUteLcBk">MAX</a>
-      <a class="btn" href="https://m.vk.com/dolgopauto">VK</a>
+      <div class="btnRow">
+        <a class="btn primary" href="tel:+79779362953">📞 Позвонить</a>
+        <a class="btn" href="https://t.me/avantekru" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn" href="https://max.ru/u/f9LHodD0cOKj3dtP8OrowftL4OglmMfxSO4WeATngrdyDcu9j8BsUteLcBk" target="_blank" rel="noopener">MAX</a>
+        <a class="btn" href="https://m.vk.com/dolgopauto" target="_blank" rel="noopener">VK</a>
+      </div>
+
+      <p class="note" style="margin-top:12px;">График: ежедневно 09:00 — 20:00</p>
+      <p class="note">Телефон: 8 (977) 936-29-53 • Почта: dolgopauto@mail.ru</p>
     </div>
 
-    <p class="note">График: ежедневно 09:00 — 20:00</p>
+    <aside class="card heroSide">
+      <div class="kv">
+        <div class="box">
+          <b>Быстрый подбор</b>
+          <span class="small">Напиши VIN в Telegram — ответим и подберём.</span>
+        </div>
+        <div class="box">
+          <b>Время работы</b>
+          <span class="small">Ежедневно 09:00 — 20:00</span>
+        </div>
+      </div>
+    </aside>
   </div>
-</div>
 
-<footer>
-  <p class="small">© DolgopAuto • 8 (977) 936-29-53 • dolgopauto@mail.ru</p>
-</footer>
+  <section>
+    <h2 class="sectionTitle">Категории</h2>
+    <div class="grid grid4">
+      <div class="card tile"><h3>ТО и расходники</h3><p>Фильтры, свечи, колодки и другое.</p></div>
+      <div class="card tile"><h3>Масла и жидкости</h3><p>Моторные, трансмиссионные, антифризы.</p></div>
+      <div class="card tile"><h3>Подвеска и тормоза</h3><p>Амортизаторы, рычаги, диски, суппорта.</p></div>
+      <div class="card tile"><h3>Аксессуары</h3><p>Сопутствующие товары и мелочи.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="small">© DolgopAuto • Ежедневно 09:00–20:00 • 8 (977) 936-29-53</div>
+  </footer>
 
 </main>
 
