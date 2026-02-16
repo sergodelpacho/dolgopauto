@@ -1,116 +1,82 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DolgopAuto — автозапчасти по VIN</title>
-<link rel="stylesheet" href="./style.css?v=7">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DolgopAuto — подбор автозапчастей по VIN</title>
+  <link rel="stylesheet" href="./style.css?v=1">
 </head>
-
 <body>
 
-<header class="hero">
-  <div class="container hero__wrap">
-    <div class="card hero__card">
-      <h1>DolgopAuto</h1>
-      <p class="subtitle">Автозапчасти под заказ и в наличии. Подбор по VIN.</p>
-
-      <div class="buttons">
-        <a href="tel:+79779362953" class="btn">📞 Позвонить</a>
-        <a href="https://t.me/avantekru" class="btn">Telegram</a>
-        <a href="https://max.ru/u/f9LHodD0cOKj3dtP8OrowftL4OglmMfxSO4WeATngrdyDcu9j8BsUteLcBk" class="btn">MAX</a>
-        <a href="https://m.vk.com/dolgopauto" class="btn">VK</a>
+<div class="container">
+  <div class="card">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">DolgopAuto</div>
+        <div class="tagline">Подбор автозапчастей по VIN</div>
       </div>
 
-      <div class="meta">
-        <div><b>График:</b> ежедневно 09:00 — 20:00</div>
-        <div><b>Телефон:</b> 8 (977) 936-29-53</div>
-        <div><b>Почта:</b> <a href="mailto:dolgopauto@mail.ru">dolgopauto@mail.ru</a></div>
-      </div>
-
-      <p class="nav">
-        <a href="catalog.html">Каталог</a> •
+      <div class="nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
         <a href="contacts.html">Контакты</a>
-      </p>
+      </div>
     </div>
-  </div>
-</header>
 
-<main class="container section">
-  <div class="grid3">
-    <div class="card pcard">
+    <h1>Автозапчасти под заказ и в наличии</h1>
+    <p class="muted">Подбор по VIN. Оригинал и аналоги. Быстро и надёжно.</p>
+
+    <div class="buttons">
+      <a class="btn" href="tel:+79779362953">📞 Позвонить</a>
+      <a class="btn" href="https://t.me/avantekru" target="_blank" rel="noopener">Telegram</a>
+      <a class="btn" href="https://max.ru/u/f9LHodD0cOKj3dtP8OrowftL4OglmMfxSO4WeATngrdyDcu9j8BsUteLcBk" target="_blank" rel="noopener">MAX</a>
+      <a class="btn" href="https://m.vk.com/dolgopauto" target="_blank" rel="noopener">VK</a>
+    </div>
+
+    <p style="margin-top:12px;"><b>График:</b> ежедневно 09:00 — 20:00</p>
+    <p><b>Телефон:</b> 8 (977) 936-29-53 • <b>Почта:</b> <a href="mailto:dolgopauto@mail.ru">dolgopauto@mail.ru</a></p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
       <h3>Категории</h3>
-      <ul class="list">
-        <li><b>ТО и расходники</b> — фильтры, свечи, колодки</li>
-        <li><b>Масла и жидкости</b> — моторные, трансмиссия, антифриз</li>
-        <li><b>Подвеска и тормоза</b> — амортизаторы, диски, суппорта</li>
-        <li><b>Аксессуары</b> — лампы, щётки, мелочи</li>
-      </ul>
-      <a class="btn ghost" href="catalog.html">Открыть каталог</a>
+      <p class="muted">ТО, масла, подвеска, электрика и аксессуары.</p>
+      <a class="btn" href="catalog.html">Перейти в каталог</a>
     </div>
 
-    <div class="card pcard">
+    <div class="card">
       <h3>Как заказать</h3>
-      <ol class="list">
-        <li><b>Напишите VIN / параметры</b> (марка, модель, год, двигатель)</li>
-        <li><b>Получите варианты</b> (оригинал / аналоги, сроки и цена)</li>
-        <li><b>Оформим заказ</b> и подскажем по оплате/получению</li>
+      <ol class="muted" style="margin:0; padding-left:18px;">
+        <li>Напишите VIN / параметры (марка, модель, год, двигатель)</li>
+        <li>Получите варианты (оригинал / аналоги, сроки и цена)</li>
+        <li>Оформим заказ и подскажем по оплате/получению</li>
       </ol>
-      <a class="btn ghost" href="contacts.html">Перейти в контакты</a>
+      <a class="btn ghost" href="contacts.html" style="margin-top:12px;">Оставить заявку</a>
     </div>
 
-    <div class="card pcard">
+    <div class="card">
       <h3>Быстрый запрос VIN</h3>
-
-      <form id="vinForm" class="form">
-        <label>Имя
-          <input id="name" required placeholder="Как к вам обращаться">
-        </label>
-
-        <label>Контакт (телефон или Telegram)
-          <input id="contact" required placeholder="+7… или @username">
-        </label>
-
-        <label>VIN / авто
-          <input id="vin" required placeholder="VIN или марка/модель/год/двигатель">
-        </label>
-
-        <label>Что нужно
-          <textarea id="need" required placeholder="Например: фильтры, масло, колодки…"></textarea>
-        </label>
-
-        <button class="btn" type="submit">Отправить в Telegram</button>
-        <p class="muted small">Откроется Telegram с готовым сообщением (без сервера).</p>
-      </form>
+      <p class="muted">Нажмите — откроется Telegram.</p>
+      <button class="btn" id="fast">Открыть Telegram с шаблоном</button>
     </div>
   </div>
 
-  <footer class="footer">
+  <div class="footer">
     © DolgopAuto • Ежедневно 09:00–20:00 • 8 (977) 936-29-53
-  </footer>
-</main>
+  </div>
+</div>
 
 <script>
-document.getElementById("vinForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const name = document.getElementById("name").value.trim();
-  const contact = document.getElementById("contact").value.trim();
-  const vin = document.getElementById("vin").value.trim();
-  const need = document.getElementById("need").value.trim();
-
-  const text =
-Заявка с сайта DolgopAuto
-Имя: ${name}
-Контакт: ${contact}
-VIN/авто: ${vin}
-Что нужно: ${need};
-
-  const tg = https://t.me/share/url?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(text)};
-  window.open(tg, "_blank", "noopener");
-
-  e.target.reset();
-});
+  document.getElementById("fast").onclick = function(){
+    const text =
+Здравствуйте! Нужен подбор запчастей.
+VIN/авто:
+Что нужно:
+Контакт для связи:;
+    const share = "https://t.me/share/url?text=" + encodeURIComponent(text);
+    window.open("https://t.me/avantekru", "_blank");
+    setTimeout(()=>window.open(share, "_blank"), 150);
+  };
 </script>
 
 </body>
