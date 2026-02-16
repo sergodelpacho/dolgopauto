@@ -1,26 +1,23 @@
-<script>
-  document.getElementById("vinForm")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = document.getElementById("fName").value.trim();
-    const contact = document.getElementById("fContact").value.trim();
-    const vin = document.getElementById("fVin").value.trim();
-    const need = document.getElementById("fNeed").value.trim();
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакты — DolgopAuto</title>
+<link rel="stylesheet" href="style.css">
+</head>
 
-    const text =
-Заявка с сайта DolgopAuto
-Имя: ${name}
-Контакт: ${contact}
-VIN/авто: ${vin}
-Что нужно: ${need}
+<body>
 
-Прошу цену и срок.;
+<div class="container">
+<h1>Контакты</h1>
 
-    openTelegramPrefill(text);
-    openMailPrefill("Заявка с сайта DolgopAuto (VIN)", text);
+<p>Телефон: 8 (977) 936-29-53</p>
+<p>График: ежедневно 09:00 — 20:00</p>
+<p>Почта: dolgopauto@mail.ru</p>
 
-    e.target.reset();
-  });
-</script>
-<script src="app.js"></script>
+<a href="index.html">← Назад</a>
+</div>
+
 </body>
 </html>
