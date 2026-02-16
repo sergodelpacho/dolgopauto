@@ -2,21 +2,60 @@ body{
 margin:0;
 font-family:Arial, sans-serif;
 color:white;
-background:#111;
+background:
+linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.9)),
+url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
+center/cover no-repeat fixed;
 }
 
 .container{
 max-width:900px;
 margin:auto;
-padding:20px;
+padding:40px 20px;
+}
+
+.card{
+background:rgba(0,0,0,.6);
+border-radius:18px;
+padding:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.6);
+}
+
+h1{
+margin-top:0;
+font-size:36px;
+}
+
+.subtitle{
+opacity:.8;
+margin-bottom:20px;
+}
+
+.buttons{
+margin:15px 0;
 }
 
 .btn{
 display:inline-block;
 background:#22c55e;
 color:white;
-padding:10px 15px;
-border-radius:8px;
+padding:12px 18px;
+border-radius:10px;
 text-decoration:none;
-margin:5px;
+margin:6px;
+font-weight:bold;
+}
+
+.btn:hover{
+background:#16a34a;
+}
+
+a{
+color:#22c55e;
+text-decoration:none;
+}
+
+.nav{
+margin-top:20px;
+font-size:18px;
 }
