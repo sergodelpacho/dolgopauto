@@ -1,57 +1,34 @@
-<input id="q" placeholder="Поиск: фильтр, масло, колодки, подвеска..." />
-      <a class="btn primary" href="tel:+79779362953">📞 Позвонить</a>
-      <a class="btn" href="https://t.me/avantekru" target="_blank" rel="noopener">✈️ Telegram</a>
-    </div>
-    <p class="note">Нужного нет в списке? Напиши VIN — подберём и предложим варианты.</p>
+<p class="muted" style="margin:10px 0 0;">Отправка идёт через открытие Telegram и почтового клиента (без сервера).</p>
   </div>
-
-  <div id="grid" class="grid" style="margin-top:12px;"></div>
-
-  <footer>
-    <div class="small">Ежедневно 09:00–20:00 • 8 (977) 936-29-53 • dolgopauto@mail.ru</div>
-  </footer>
-</main>
+</div>
 
 <script>
-  const items = [
-    {t:"ТО и расходники", d:"Фильтры, свечи, ремни, колодки и другое для обслуживания."},
-    {t:"Масла и жидкости", d:"Моторные/трансмиссионные масла, антифриз, тормозная жидкость."},
-    {t:"Тормозная система", d:"Колодки, диски, суппорта, датчики, ремкомплекты."},
-    {t:"Подвеска", d:"Амортизаторы, стойки, рычаги, сайлентблоки, шаровые."},
-    {t:"Двигатель", d:"Датчики, прокладки, ролики, навесное, ремни и комплектующие."},
-    {t:"Электрика", d:"Лампы, датчики, аккумуляторы, стартеры, генераторы (уточняй по авто)."},
-    {t:"Фильтрация", d:"Масляные, воздушные, салонные, топливные фильтры."},
-    {t:"Охлаждение", d:"Радиаторы, термостаты, помпы, патрубки, вентиляторы."},
-    {t:"Аксессуары", d:"Щётки, крепления, мелочи и полезные вещи."},
-  ];
+  // фильтр + поиск
+  const chips = document.querySelectorAll(".chipBtn");
+  const cards = document.querySelectorAll(".pcard");
+  const search = document.getElementById("searchInput");
+  let active = "all";
 
-  const grid = document.getElementById('grid');
-  const q = document.getElementById('q');
-
-  function render(filter){
-    const f = (filter||"").trim().toLowerCase();
-    grid.innerHTML = "";
-    items
-      .filter(x => !f || (x.t + " " + x.d).toLowerCase().includes(f))
-      .forEach(x => {
-        const el = document.createElement('div');
-        el.className = "card tile";
-        el.innerHTML = 
-          <h3>${x.t}</h3>
-          <p>${x.d}</p>
-          <p class="note" style="margin-top:10px;">
-            <a class="btn" style="padding:10px 12px;border-radius:12px;display:inline-flex" href="contacts.html#form">Запросить →</a>
-          </p>;
-        grid.appendChild(el);
-      });
+  function apply() {
+    const q = (search?.value || "").trim().toLowerCase();
+    cards.forEach(c => {
+      const cat = c.getAttribute("data-cat");
+      const name = (c.getAttribute("data-name") || "").toLowerCase();
+      const okCat = (active === "all") || (cat === active);
+      const okQ = !q || name.includes(q);
+      c.style.display = (okCat && okQ) ? "" : "none";
+    });
   }
 
-  q.addEventListener('input', () => render(q.value));
-  render("");
+  chips.forEach(btn => btn.addEventListener("click", () => {
+    chips.forEach(x => x.classList.remove("active"));
+    btn.classList.add("active");
+    active = btn.getAttribute("data-filter") || "all";
+    apply();
+  }));
+
+  search?.addEventListener("input", apply);
 </script>
+<script src="app.js"></script>
 </body>
 </html>
-
-Telegram (http://t.me/avantekru)
-Магазин автозапчастей и автокосметики
-Магазин автозапчастей
