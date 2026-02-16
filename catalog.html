@@ -1,34 +1,26 @@
-<p class="muted" style="margin:10px 0 0;">Отправка идёт через открытие Telegram и почтового клиента (без сервера).</p>
-  </div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Каталог — DolgopAuto</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+<h1>Каталог</h1>
+
+<ul>
+<li>ТО и расходники</li>
+<li>Масла и жидкости</li>
+<li>Подвеска и тормоза</li>
+<li>Аксессуары</li>
+</ul>
+
+<a href="index.html">← Назад</a>
 </div>
 
-<script>
-  // фильтр + поиск
-  const chips = document.querySelectorAll(".chipBtn");
-  const cards = document.querySelectorAll(".pcard");
-  const search = document.getElementById("searchInput");
-  let active = "all";
-
-  function apply() {
-    const q = (search?.value || "").trim().toLowerCase();
-    cards.forEach(c => {
-      const cat = c.getAttribute("data-cat");
-      const name = (c.getAttribute("data-name") || "").toLowerCase();
-      const okCat = (active === "all") || (cat === active);
-      const okQ = !q || name.includes(q);
-      c.style.display = (okCat && okQ) ? "" : "none";
-    });
-  }
-
-  chips.forEach(btn => btn.addEventListener("click", () => {
-    chips.forEach(x => x.classList.remove("active"));
-    btn.classList.add("active");
-    active = btn.getAttribute("data-filter") || "all";
-    apply();
-  }));
-
-  search?.addEventListener("input", apply);
-</script>
-<script src="app.js"></script>
 </body>
 </html>
