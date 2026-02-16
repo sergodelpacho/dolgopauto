@@ -1,34 +1,41 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Каталог — DolgopAuto</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="card">
-      <h1>Каталог</h1>
-      <p class="muted">Выберите категорию и напишите нам в Telegram по VIN.</p>
-
-      <h3>ТО и расходники</h3>
-      <p>Фильтры, свечи, колодки.</p>
-
-      <h3>Масла и жидкости</h3>
-      <p>Моторные, трансмиссионные, антифризы.</p>
-
-      <h3>Подвеска и тормоза</h3>
-      <p>Амортизаторы, рычаги, диски, суппорта.</p>
-
-      <h3>Аксессуары</h3>
-      <p>Сопутствующие товары и мелочи.</p>
-
-      <p style="margin-top:16px">
-        <a class="btn" href="index.html">← На главную</a>
-        <a class="btn" href="contacts.html">Контакты</a>
-      </p>
+<p class="muted">Напиши VIN / авто / что нужно — ответим и подберём оригинал или аналоги.</p>
+    <div class="actions">
+      <a class="btn" href="https://t.me/avantekru" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn ghost" href="contacts.html">Форма заявки</a>
+      <a class="btn ghost" href="tel:+79779362953">Позвонить</a>
     </div>
   </div>
+
+  <footer class="footer">
+    © DolgopAuto • Ежедневно 09:00–20:00 • 8 (977) 936-29-53
+  </footer>
+</main>
+
+<script>
+  const TG_LINK = "https://t.me/avantekru";
+
+  function openTelegram(category){
+    const text =
+Здравствуйте! Хочу подобрать запчасти.
+Категория: ${category}
+
+VIN/авто:
+Что нужно:
+Контакт для связи:;
+
+    // 1) Если Telegram установлен — откроется чат по ссылке
+    // 2) Параллельно открываем share-ссылку с текстом (на некоторых устройствах работает лучше)
+    window.open(TG_LINK, "_blank", "noopener");
+    const share = https://t.me/share/url?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(text)};
+    setTimeout(()=>window.open(share, "_blank", "noopener"), 150);
+  }
+
+  document.querySelectorAll("[data-tg]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      openTelegram(btn.getAttribute("data-tg"));
+    });
+  });
+</script>
+
 </body>
 </html>
