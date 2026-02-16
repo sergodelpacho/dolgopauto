@@ -67,3 +67,13 @@ a:hover{
   color:white !important;
   font-size:16px;
 }
+.logo{
+  width:40px;height:40px;border-radius:12px;
+  background: linear-gradient(135deg, #22c55e, #3b82f6);
+  display:inline-flex;align-items:center;justify-content:center;
+  color:#0b1220;font-weight:900;
+}
+.logo::after{content:"D"; font-size:20px;}
+.nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+.navlink{color:#eafff2;opacity:.9}
+.navlink:hover{opacity:1}
