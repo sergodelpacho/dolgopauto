@@ -1,78 +1,26 @@
-<div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
-        <a class="btn primary" href="tel:+79779362953">📞 Позвонить</a>
-        <a class="btn" href="https://t.me/avantekru" target="_blank" rel="noopener">✈️ Telegram</a>
-        <a class="btn" href="#" title="Вставьте ссылку на MAX">▶️ MAX</a>
-        <a class="btn" href="#" title="Вставьте ссылку на VK">VK</a>
-      </div>
-
-      <p class="note" style="margin-top:12px;">
-        Если дашь ссылку на карту (Яндекс/Google) — вставлю кнопку “Открыть на карте”.
-      </p>
-    </div>
-
-    <div class="card box" id="form">
-      <h2 style="margin:0 0 10px;">Заявка / подбор</h2>
-      <form id="leadForm">
-        <div class="field">
-          <label for="name">Имя</label>
-          <input id="name" placeholder="Как к вам обращаться" required>
-        </div>
-        <div class="field">
-          <label for="contact">Контакт (телефон или Telegram)</label>
-          <input id="contact" placeholder="+7… или @username" required>
-        </div>
-        <div class="field">
-          <label for="topic">Тема</label>
-          <input id="topic" placeholder="Подбор по VIN / ТО / масла…" required>
-        </div>
-        <div class="field">
-          <label for="msg">Сообщение (VIN / авто / детали)</label>
-          <textarea id="msg" placeholder="Например: VIN…, модель, год, что нужно" required></textarea>
-        </div>
-
-        <button class="btn primary" type="submit">Отправить в Telegram и на почту</button>
-        <p class="note" style="margin:10px 0 0;">
-          Откроется Telegram (отправишь в чат сотрудников) и письмо на dolgopauto@mail.ru.
-        </p>
-      </form>
-    </div>
-  </div>
-
-  <footer>
-    <div class="small">© DolgopAuto • Ежедневно 09:00–20:00 • 8 (977) 936-29-53</div>
-  </footer>
-</main>
-
 <script>
-  const form = document.getElementById('leadForm');
-  form?.addEventListener('submit', (e) => {
+  document.getElementById("vinForm")?.addEventListener("submit", (e) => {
     e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const contact = document.getElementById('contact').value.trim();
-    const topic = document.getElementById('topic').value.trim();
-    const msg = document.getElementById('msg').value.trim();
+    const name = document.getElementById("fName").value.trim();
+    const contact = document.getElementById("fContact").value.trim();
+    const vin = document.getElementById("fVin").value.trim();
+    const need = document.getElementById("fNeed").value.trim();
 
     const text =
 Заявка с сайта DolgopAuto
 Имя: ${name}
 Контакт: ${contact}
-Тема: ${topic}
-Сообщение: ${msg};
+VIN/авто: ${vin}
+Что нужно: ${need}
 
-    const tgShare = https://t.me/share/url?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(text)};
-    window.open(tgShare, '_blank', 'noopener');
+Прошу цену и срок.;
 
-    const subject = Заявка с сайта: ${topic};
-    const mailto = mailto:dolgopauto@mail.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)};
-    setTimeout(() => { window.location.href = mailto; }, 350);
+    openTelegramPrefill(text);
+    openMailPrefill("Заявка с сайта DolgopAuto (VIN)", text);
 
-    form.reset();
+    e.target.reset();
   });
 </script>
+<script src="app.js"></script>
 </body>
 </html>
-
-Telegram (http://t.me/avantekru)
-Магазин автозапчастей и автокосметики
-Магазин автозапчастей
