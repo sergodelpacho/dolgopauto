@@ -1,38 +1,110 @@
-<p class="muted">Напиши VIN / авто / что нужно — ответим и подберём оригинал или аналоги.</p>
-    <div class="actions">
-      <a class="btn" href="https://t.me/avantekru" target="_blank" rel="noopener">Написать в Telegram</a>
-      <a class="btn ghost" href="contacts.html">Форма заявки</a>
-      <a class="btn ghost" href="tel:+79779362953">Позвонить</a>
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог — DolgopAuto</title>
+  <link rel="stylesheet" href="./style.css?v=1">
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">Каталог</div>
+        <div class="tagline muted">Выберите категорию и запросите цену</div>
+      </div>
+      <div class="nav">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Каталог</a>
+        <a href="contacts.html">Контакты</a>
+      </div>
+    </div>
+
+    <p class="muted">Кнопка «Запросить цену» открывает Telegram с готовым текстом.</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>ТО и расходники</h3>
+      <p class="muted">Фильтры, свечи, колодки и другое для обслуживания.</p>
+      <div class="tagrow"><span class="tag">ТО</span><span class="tag">Фильтры</span><span class="tag">Тормоза</span></div>
+      <div class="actions">
+        <button class="btn" data-cat="ТО и расходники">Запросить цену</button>
+        <a class="btn ghost" href="contacts.html">Оставить VIN</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Масла и жидкости</h3>
+      <p class="muted">Моторные, трансмиссионные, антифризы, тормозные жидкости.</p>
+      <div class="tagrow"><span class="tag">Масла</span><span class="tag">Антифриз</span><span class="tag">ТЖ</span></div>
+      <div class="actions">
+        <button class="btn" data-cat="Масла и жидкости">Запросить цену</button>
+        <a class="btn ghost" href="contacts.html">Оставить VIN</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Подвеска и тормоза</h3>
+      <p class="muted">Амортизаторы, рычаги, диски, колодки, суппорта.</p>
+      <div class="tagrow"><span class="tag">Подвеска</span><span class="tag">Тормоза</span><span class="tag">Рычаги</span></div>
+      <div class="actions">
+        <button class="btn" data-cat="Подвеска и тормоза">Запросить цену</button>
+        <a class="btn ghost" href="contacts.html">Оставить VIN</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Электрика</h3>
+      <p class="muted">Лампы, АКБ, стартер/генератор, предохранители.</p>
+      <div class="tagrow"><span class="tag">АКБ</span><span class="tag">Лампы</span><span class="tag">Реле</span></div>
+      <div class="actions">
+        <button class="btn" data-cat="Электрика">Запросить цену</button>
+        <a class="btn ghost" href="contacts.html">Оставить VIN</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Аксессуары</h3>
+      <p class="muted">Сопутствующие товары и полезные мелочи.</p>
+      <div class="tagrow"><span class="tag">Щётки</span><span class="tag">Коврики</span><span class="tag">Химия</span></div>
+      <div class="actions">
+        <button class="btn" data-cat="Аксессуары">Запросить цену</button>
+        <a class="btn ghost" href="contacts.html">Оставить VIN</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Нужно по VIN?</h3>
+      <p class="muted">Напишите VIN/авто/что нужно — ответим и подберём.</p>
+      <div class="actions">
+        <a class="btn" href="https://t.me/avantekru" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn ghost" href="contacts.html">Форма заявки</a>
+      </div>
     </div>
   </div>
 
-  <footer class="footer">
+  <div class="footer">
     © DolgopAuto • Ежедневно 09:00–20:00 • 8 (977) 936-29-53
-  </footer>
-</main>
+  </div>
+</div>
 
 <script>
-  const TG_LINK = "https://t.me/avantekru";
-
-  function openTelegram(category){
-    const text =
+  document.querySelectorAll("[data-cat]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const cat = btn.getAttribute("data-cat");
+      const text =
 Здравствуйте! Хочу подобрать запчасти.
-Категория: ${category}
+Категория: ${cat}
 
 VIN/авто:
 Что нужно:
 Контакт для связи:;
-
-    // 1) Если Telegram установлен — откроется чат по ссылке
-    // 2) Параллельно открываем share-ссылку с текстом (на некоторых устройствах работает лучше)
-    window.open(TG_LINK, "_blank", "noopener");
-    const share = https://t.me/share/url?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(text)};
-    setTimeout(()=>window.open(share, "_blank", "noopener"), 150);
-  }
-
-  document.querySelectorAll("[data-tg]").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      openTelegram(btn.getAttribute("data-tg"));
+      window.open("https://t.me/avantekru", "_blank");
+      const share = "https://t.me/share/url?text=" + encodeURIComponent(text);
+      setTimeout(()=>window.open(share, "_blank"), 150);
     });
   });
 </script>
