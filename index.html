@@ -308,9 +308,7 @@
               <textarea id="msg" name="msg" placeholder="Например: VIN…, модель, год, что нужно" required></textarea>
             </div>
 <button class="btn primary" type="submit">Отправить (через Telegram/MAX)</button>
-            <p class="small" style="margin:10px 0 0">
-              На GitHub Pages нет “серверной” отправки формы. Я настрою отправку в Telegram бот / на почту — как скажешь.
-            </p>
+            <p class="small" style="margin:10px 0 0"
           </form>
         </div>
       </div>
@@ -322,8 +320,6 @@
   </main>
 
   <script>
-    // На GitHub Pages формы не отправляются на сервер "сами".
-    // Делаем удобный вариант: по кнопке формируем сообщение и открываем ссылку на мессенджер.
     const form = document.getElementById('leadForm');
     form.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -338,18 +334,14 @@
 Контакт: ${contact}
 Тема: ${topic}
 Сообщение: ${msg};
-
-      // Вариант 1: открыть Telegram (замени USERNAME на свой)
-      const telegramUsername = "USERNAME";
+      const telegramUsername = "https://t.me/avantekru";
       const tgUrl = https://t.me/${telegramUsername}?text=${encodeURIComponent(text)};
 
-      // Вариант 2: можно заменить на MAX/VK ссылку — скажешь, куда вести
       window.open(tgUrl, '_blank', 'noopener');
     });
   </script>
 </body>
 </html>
-Ося, [16.02.2026 23:27]
 <!doctype html>
 <html lang="ru">
 <head>
@@ -511,9 +503,9 @@
 
         <div class="ctaRow">
           <a class="btn primary" href="tel:+74955760002">☎️ Позвонить: +7 (495) 576-00-02</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">✈️ Telegram</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">▶️ MAX</a>
-          <a class="btn" href="#" target="_blank" rel="noopener">VK</a>
+          <a class="btn" href="#" target="_blank" rel="https://t.me/avantekru">✈️ Telegram</a>
+          <a class="btn" href="#" target="_blank" rel="https://max.ru/u/f9LHodD0cOKj3dtP8OrowftL4OglmMfxSO4WeATngrdyDcu9j8BsUteLcBk">▶️ MAX</a>
+          <a class="btn" href="#" target="_blank" rel="https://m.vk.com/dolgopauto?from=groups">VK</a>
         </div>
 
         <div class="sep"></div>
@@ -599,14 +591,14 @@
             <b style="color:var(--text)">Адрес:</b> Долгопрудный, Лихачёвский пр-т, 26<br/>
             <b style="color:var(--text)">Телефон:</b> <a href="tel:+74955760002">+7 (495) 576-00-02</a><br/>
             <b style="color:var(--text)">Почта:</b> <a href="mailto:dolgopauto@mail.ru">dolgopauto@mail.ru</a><br/>
-            <b style="color:var(--text)">График:</b> пн–сб 09:00–20:00 • вс 09:00–18:00
+            <b style="color:var(--text)">График:</b> пн–сб 09:00–20:00 • вс 09:00–20:00
           </p>
 
           <div class="ctaRow" style="margin-top:10px">
             <a class="btn primary" href="tel:+74955760002">☎️ Позвонить</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">✈️ Telegram</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">▶️ MAX</a>
-            <a class="btn" href="#" target="_blank" rel="noopener">VK</a>
+            <a class="btn" href="#" target="_blank" rel="https://t.me/avantekru">✈️ Telegram</a>
+            <a class="btn" href="#" target="_blank" rel="https://max.ru/u/f9LHodD0cOKj3dtP8OrowftL4OglmMfxSO4WeATngrdyDcu9j8BsUteLcBk">▶️ MAX</a>
+            <a class="btn" href="#" target="_blank" rel="https://m.vk.com/dolgopauto">VK</a>
           </div>
 
           <div class="sep"></div>
