@@ -1,8 +1,4 @@
-<section>
-    <h2 class="sectionTitle">Категории</h2>
-    <div class="grid grid4">
-      <div class="card tile"><h3>ТО и расходники</h3><p>Фильтры, свечи, колодки и другое для обслуживания.</p></div>
-      <div class="card tile"><h3>Масла и жидкости</h3><p>Моторные, трансмиссионные, антифризы, тормозные жидкости.</p></div>
+<div class="card tile"><h3>Масла и жидкости</h3><p>Моторные, трансмиссионные, антифризы, тормозные жидкости.</p></div>
       <div class="card tile"><h3>Подвеска и тормоза</h3><p>Амортизаторы, рычаги, диски, колодки, суппорта.</p></div>
       <div class="card tile"><h3>Аксессуары</h3><p>Сопутствующие товары и полезные мелочи.</p></div>
     </div>
@@ -22,7 +18,7 @@
         <p>Подскажем по оплате/получению. Дальше всё по ситуации.</p>
       </div>
 
-      <div class="card form">
+      <div class="card form" id="contacts">
         <h3 style="margin:0 0 10px;">Оставить заявку</h3>
         <form id="leadForm">
           <div class="field">
@@ -42,19 +38,18 @@
             <textarea id="msg" placeholder="Например: VIN…, модель, год, что нужно" required></textarea>
           </div>
           <button class="btn primary" type="submit">Отправить в Telegram и на почту</button>
-          <p class="note" style="margin:10px 0 0;">На GitHub Pages форма отправляется через открытие Telegram и почтового клиента.</p>
+          <p class="note" style="margin:10px 0 0;">На GitHub Pages форма отправляет через открытие Telegram и почтового клиента.</p>
         </form>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="small">© DolgopAuto • Автозапчасти • Ежедневно 09:00–20:00 • Тел: 8 (977) 936-29-53</div>
+    <div class="small">© DolgopAuto • Ежедневно 09:00–20:00 • 8 (977) 936-29-53</div>
   </footer>
 </main>
 
 <script>
-  // Отправка: Telegram share + mailto (работает на GitHub Pages без сервера)
   const form = document.getElementById('leadForm');
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -81,30 +76,5 @@
     form.reset();
   });
 </script>
-</body>
-</html>
-<div class="container">
-
-<div class="card">
-<h1>DolgopAuto</h1>
-<p>Автозапчасти под заказ и в наличии. Подбор по VIN.</p>
-
-<a class="btn" href="tel:+79779362953">📞 Позвонить</a>
-<a class="btn" href="https://t.me/avantekru">✈️ Telegram</a>
-<a class="btn" href="#">▶️ MAX</a>
-<a class="btn" href="#">VK</a>
-</div>
-
-<div class="card">
-<h2>Контакты</h2>
-<p>
-Телефон: 8 (977) 936-29-53<br>
-График работы: ежедневно 9:00 — 20:00<br>
-Почта: dolgopauto@mail.ru
-</p>
-</div>
-
-</div>
-
 </body>
 </html>
