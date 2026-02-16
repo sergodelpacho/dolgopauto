@@ -1,164 +1,22 @@
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  color:white;
-
-  background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
-    url("https://images.unsplash.com/photo-1503376780353-7e6692767b70")
-    center/cover no-repeat fixed;
+margin:0;
+font-family:Arial, sans-serif;
+color:white;
+background:#111;
 }
 
 .container{
-  max-width:1000px;
-  margin:auto;
-  padding:20px;
+max-width:900px;
+margin:auto;
+padding:20px;
 }
-
-header{
-  background:rgba(0,0,0,.7);
-  padding:15px 0;
-}
-
-.brand{
-  font-size:22px;
-  font-weight:bold;
-}
-
-.card{
-  background:rgba(0,0,0,.65);
-  border-radius:18px;
-  padding:25px;
-  margin-bottom:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
-}
-
-h1{margin-top:0}
 
 .btn{
-  display:inline-block;
-  padding:12px 16px;
-  margin:6px 6px 0 0;
-  border-radius:10px;
-  background:#22c55e;
-  color:white;
-  text-decoration:none;
-  font-weight:bold;
+display:inline-block;
+background:#22c55e;
+color:white;
+padding:10px 15px;
+border-radius:8px;
+text-decoration:none;
+margin:5px;
 }
-
-.btn:hover{
-  background:#16a34a;
-}
-
-footer{
-  margin-top:30px;
-  opacity:.8;
-  font-size:14px;
-}
-a{
-  color:white;
-  text-decoration:none;
-}
-
-a:hover{
-  color:#22c55e;
-}
-.btn{
-  color:white !important;
-  font-size:16px;
-}
-.logo{
-  width:40px;height:40px;border-radius:12px;
-  background: linear-gradient(135deg, #22c55e, #3b82f6);
-  display:inline-flex;align-items:center;justify-content:center;
-  color:#0b1220;font-weight:900;
-}
-.logo::after{content:"D"; font-size:20px;}
-.nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
-.navlink{color:#eafff2;opacity:.9}
-.navlink:hover{opacity:1}
-/* UI */
-.badge{
-  display:none;
-  min-width:20px;height:20px;border-radius:999px;
-  background:#22c55e;color:#081018;
-  font-weight:800;font-size:12px;
-  align-items:center;justify-content:center;
-  margin-left:6px;
-}
-.cartBtn{
-  border:0;
-  border-radius:10px;
-  padding:10px 12px;
-  background:rgba(255,255,255,.08);
-  color:white;
-  cursor:pointer;
-}
-.cartBtn:hover{background:rgba(255,255,255,.12)}
-
-.p20{padding:20px}
-.muted{opacity:.82}
-
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-@media(max-width:900px){.grid3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
-
-.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px}
-.chipBtn{
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  color:white;
-  padding:8px 12px;
-  border-radius:999px;
-  cursor:pointer;
-}
-.chipBtn.active{background:#22c55e;color:#081018;border-color:transparent}
-.search{
-  flex:1;
-  min-width:220px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  color:white;
-  padding:10px 12px;
-}
-
-.pcard{padding:18px}
-.pcard h3{margin:0 0 6px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-.btn.ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18)}
-.btn.ghost:hover{background:rgba(255,255,255,.10)}
-
-.modal{
-  position:fixed; inset:0;
-  background:rgba(0,0,0,.6);
-  display:none;
-  align-items:center; justify-content:center;
-  padding:16px;
-}
-.modal.open{display:flex}
-.modalBox{width:min(920px, 100%); padding:18px}
-.modalHead{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.cartRow{display:flex;gap:12px;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.12)}
-.cartTitle{min-width:220px}
-.cartControls{display:flex;align-items:center;gap:8px}
-.miniBtn{
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  color:white;
-  border-radius:10px;
-  padding:8px 10px;
-  cursor:pointer;
-}
-.miniBtn:hover{background:rgba(255,255,255,.10)}
-.miniBtn.danger{border-color:rgba(239,68,68,.5)}
-.qtyInput{
-  width:54px; text-align:center;
-  border-radius:10px;
-  border:1px solid rgba(255,255,255,.18);
-  background:rgba(255,255,255,.06);
-  color:white;
-  padding:8px 6px;
-}
-.divider{height:1px;background:rgba(255,255,255,.12);margin:12px 0}
-.field input,.field textarea{width:100%}
