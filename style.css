@@ -1,0 +1,21 @@
+label{font-size:13px; color:var(--muted)}
+input, textarea{
+  width:100%;
+  padding:12px 12px;
+  border-radius:14px;
+  border:1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  outline:none;
+}
+textarea{min-height:110px; resize:vertical}
+
+.note{font-size:13px; color:var(--muted); line-height:1.5}
+.divider{height:1px; background:var(--border); margin:14px 0}
+
+footer{
+  padding:22px 0 34px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  margin-top:10px;
+}
