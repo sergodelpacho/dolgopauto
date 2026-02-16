@@ -1,58 +1,57 @@
-<form id="leadForm">
-          <div class="field">
-            <label for="name">Имя</label>
-            <input id="name" placeholder="Как к вам обращаться" required>
-          </div>
-          <div class="field">
-            <label for="contact">Контакт (телефон или Telegram)</label>
-            <input id="contact" placeholder="+7… или @username" required>
-          </div>
-          <div class="field">
-            <label for="topic">Тема</label>
-            <input id="topic" placeholder="Подбор по VIN / ТО / масла…" required>
-          </div>
-          <div class="field">
-            <label for="msg">Сообщение (VIN / авто / детали)</label>
-            <textarea id="msg" placeholder="Например: VIN…, модель, год, что нужно" required></textarea>
-          </div>
-          <button class="btn primary" type="submit">Отправить в Telegram и на почту</button>
-          <p class="note" style="margin:10px 0 0;">На GitHub Pages форма отправляет через открытие Telegram и почтового клиента.</p>
-        </form>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DolgopAuto — автозапчасти</title>
+
+<link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <b>DolgopAuto</b><br>
+          <span class="small">Подбор автозапчастей по VIN</span>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</header>
 
-  <footer>
-    <div class="small">© DolgopAuto • Ежедневно 09:00–20:00 • 8 (977) 936-29-53</div>
-  </footer>
+<main class="container">
+
+<div class="hero">
+  <div class="card heroMain">
+    <h1>Автозапчасти под заказ и в наличии</h1>
+    <p class="lead">Подбор по VIN. Оригинал и аналоги. Быстро и надёжно.</p>
+
+    <div class="btnRow">
+      <a class="btn primary" href="tel:+79779362953">📞 Позвонить</a>
+      <a class="btn" href="https://t.me/avantekru">Telegram</a>
+      <a class="btn" href="https://max.ru/u/f9LHodD0cOKj3dtP8OrowftL4OglmMfxSO4WeATngrdyDcu9j8BsUteLcBk">MAX</a>
+      <a class="btn" href="https://m.vk.com/dolgopauto">VK</a>
+    </div>
+
+    <p class="note">График: ежедневно 09:00 — 20:00</p>
+  </div>
+</div>
+
+<footer>
+  <p class="small">© DolgopAuto • 8 (977) 936-29-53 • dolgopauto@mail.ru</p>
+</footer>
+
 </main>
 
-<script>
-  const form = document.getElementById('leadForm');
-  form?.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const contact = document.getElementById('contact').value.trim();
-    const topic = document.getElementById('topic').value.trim();
-    const msg = document.getElementById('msg').value.trim();
-
-    const text =
-Заявка с сайта DolgopAuto
-Имя: ${name}
-Контакт: ${contact}
-Тема: ${topic}
-Сообщение: ${msg};
-
-    const tgShare = https://t.me/share/url?url=${encodeURIComponent(location.href)}&text=${encodeURIComponent(text)};
-    window.open(tgShare, '_blank', 'noopener');
-
-    const subject = Заявка с сайта: ${topic};
-    const mailto = mailto:dolgopauto@mail.ru?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)};
-    setTimeout(() => { window.location.href = mailto; }, 350);
-
-    form.reset();
-  });
-</script>
 </body>
 </html>
+
+Telegram (https://t.me/avantekru)
+Магазин автозапчастей и автокосметики
+Магазин автозапчастей
