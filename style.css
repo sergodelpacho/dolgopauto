@@ -177,3 +177,10 @@ body{
   .grid{ grid-template-columns: 1fr; }
   .container{ padding: 20px 14px; }
 }
+.hero_card{
+  margin-bottom: 20px;
+}
+
+.buttons{
+  margin: 15px 0;
+}
