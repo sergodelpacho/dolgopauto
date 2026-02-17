@@ -148,3 +148,32 @@ textarea{ min-height: 110px; resize: vertical; }
   .grid{ grid-template-columns: 1fr; }
   .btn{ width:100%; text-align:center; }
 }
+/* ===== Fix: чтобы главная не выглядела пустой ===== */
+html, body { height: 100%; }
+
+body{
+  min-height: 100vh;
+}
+
+.container{
+  max-width: 1100px;      /* было 900/1000 — на широких мониторах мало */
+  min-height: 100vh;      /* чтобы блок не "заканчивался" сразу */
+  padding: 60px 20px;     /* больше воздуха сверху/снизу */
+}
+
+.card{
+  width: 100%;
+}
+
+/* сетка ниже хедера: 3 колонки на ПК, 1 колонка на телефоне */
+.grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+@media (max-width: 900px){
+  .grid{ grid-template-columns: 1fr; }
+  .container{ padding: 20px 14px; }
+}
