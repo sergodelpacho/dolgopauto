@@ -1,53 +1,111 @@
-<!-- CONTACTS_TEST_123 -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Контакты — DolgopAuto</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Контакты — DolgopAuto</title>
+  <link rel="stylesheet" href="./style.css?v=2000" />
 </head>
 
 <body>
+  <div class="container">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">DolgopAuto</div>
+        <div class="tagline">Подбор автозапчастей по VIN</div>
+      </div>
 
-<div class="container">
-<div class="card">
+      <nav class="nav">
+        <a class="navlink" href="./index.html">Главная</a>
+        <a class="navlink" href="./catalog.html">Каталог</a>
+        <a class="navlink active" href="./contacts.html">Контакты</a>
+      </nav>
+    </header>
 
-<h1>Контакты</h1>
+    <main class="card">
+      <h1>Контакты</h1>
 
-<p>Телефон: 8 (977) 936-29-53</p>
-<p>График: ежедневно 09:00 — 20:00</p>
-<p>Почта: dolgopauto@mail.ru</p>
+      <div class="meta">
+        <div><b>Телефон:</b> <a href="tel:+79779362953">8 (977) 936-29-53</a></div>
+        <div><b>График:</b> ежедневно 09:00 — 20:00</div>
+        <div><b>Почта:</b> <a href="mailto:dolgopauto@mail.ru">dolgopauto@mail.ru</a></div>
+      </div>
 
-<div class="buttons">
+      <div class="buttons">
+        <a class="btn" href="tel:+79779362953">📞 Позвонить</a>
+        <a class="btn" href="https://t.me/avantekru" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn" href="https://max.ru/u/f9LHodD0cOKj3dtP8OrowftL4OglmMfxSO4WeATngrdyDcu9j8BsUteLcBk" target="_blank" rel="noopener">MAX</a>
+        <a class="btn" href="https://m.vk.com/dolgopauto" target="_blank" rel="noopener">VK</a>
+      </div>
 
-<a class="btn" href="tel:+79779362953">📞 Позвонить</a>
+      <div class="divider"></div>
 
-<a class="btn" href="https://t.me/avantekru">
-Telegram
-</a>
+      <h2 class="h2">Оставить заявку</h2>
 
-<a class="btn" href="https://max.ru/u/f9LHodD0cOKj3dtP8OrowftL4OglmMfxSO4WeATngrdyDcu9j8BsUteLcBk">
-MAX
-</a>
+      <form id="leadForm" class="form">
+        <label>Имя
+          <input id="name" type="text" placeholder="Как к вам обращаться" />
+        </label>
 
-<a class="btn" href="https://m.vk.com/dolgopauto">
-VK
-</a>
+        <label>Контакт (телефон или Telegram)
+          <input id="contact" type="text" placeholder="+7... или @username" />
+        </label>
 
-</div>
+        <label>Тема
+          <input id="topic" type="text" placeholder="Подбор по VIN / ТО / масла" />
+        </label>
 
-<br>
+        <label>Сообщение (VIN / авто / детали)
+          <textarea id="msg" placeholder="Например: VIN..., модель, год, что нужно"></textarea>
+        </label>
 
-<a href="index.html">← На главную</a> |
-<a href="catalog.html">Каталог</a>
+        <div class="buttons">
+          <button class="btn" type="button" id="sendTg">Отправить в Telegram</button>
+          <button class="btn ghost" type="button" id="sendMail">Отправить на почту</button>
+          <a class="btn ghost" href="./index.html">← На главную</a>
+        </div>
 
-</div>
-</div>
+        <p class="note">На GitHub Pages форма открывает Telegram / почтовый клиент (без сервера).</p>
+      </form>
 
-<footer>
-© DolgopAuto • ежедневно 09:00–20:00
-</footer>
+      <footer class="footer">
+        © DolgopAuto • Ежедневно 09:00–20:00 • 8 (977) 936-29-53
+      </footer>
+    </main>
+  </div>
 
+  <script>
+    function buildText() {
+      const name = document.getElementById("name").value.trim();
+      const contact = document.getElementById("contact").value.trim();
+      const topic = document.getElementById("topic").value.trim();
+      const msg = document.getElementById("msg").value.trim();
+
+      return (
+Заявка с сайта DolgopAuto
+
+Имя: ${name || "-"}
+Контакт: ${contact || "-"}
+Тема: ${topic || "-"}
+
+Сообщение:
+${msg || "-"}
+      );
+    }
+
+    document.getElementById("sendTg").addEventListener("click", () => {
+      const text = buildText();
+      const share = "https://t.me/share/url?text=" + encodeURIComponent(text);
+      window.open(share, "_blank");
+    });
+
+    document.getElementById("sendMail").addEventListener("click", () => {
+      const text = buildText();
+      const subject = "Заявка с сайта DolgopAuto";
+      const mailto = "mailto:dolgopauto@mail.ru?subject=" + encodeURIComponent(subject) +
+                     "&body=" + encodeURIComponent(text);
+      window.location.href = mailto;
+    });
+  </script>
 </body>
 </html>
